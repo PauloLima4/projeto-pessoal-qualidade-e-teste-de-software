@@ -1,47 +1,31 @@
 function converterTemperatura(valor, origem, destino) {
-    if (typeof valor !== 'number' || isNaN(valor)) {
-        return "Entrada inválida. Por favor, informe um número";
-    }
-
-    const unidades = ['C', 'F', 'K'];
     origem = origem.toUpperCase();
     destino = destino.toUpperCase();
 
-    if (!unidades.includes(origem) || !unidades.includes(destino)) {
-        return "Unidade inválida. Use C, F ou K";
-    }
-
-    if (origem === 'K' && valor < 0) {
-        return "Temperatura em Kelvin não pode ser negativa";
-    }
-    if (origem === 'C' && valor < -273.15) {
-        return "Temperatura em Celsius não pode ser menor que -273.15°C";
-    }
-    if (origem === 'F' && valor < -459.67) {
-        return "Temperatura em Fahrenheit não pode ser menor que -459.67°F";
-    }
+    if (origem === destino) return valor;
 
     let celsius;
 
-    if (origem === 'C') {
-        celsius = valor;
-    } else if (origem === 'F') {
-        celsius = (valor - 32) * 5 / 9;
-    } else if (origem === 'K') {
-        celsius = valor - 273.15;
+    // Converter origem para Celsius
+    switch (origem) {
+        case 'C': celsius = valor; break;
+        case 'F': celsius = (valor - 32) * 5/9; break;
+        case 'K': celsius = valor - 273.15; break;
+        default: throw new Error("Unidade de origem inválida");
     }
 
-    let resultado;
-
-    if (destino === 'C') {
-        resultado = celsius;
-    } else if (destino === 'F') {
-        resultado = (celsius * 9 / 5) + 32;
-    } else if (destino === 'K') {
-        resultado = celsius + 273.15;
+    // Converter Celsius para destino
+    switch (destino) {
+        case 'C': return celsius;
+        case 'F': return (celsius * 9/5) + 32;
+        case 'K': return celsius + 273.15;
+        default: throw new Error("Unidade de destino inválida");
     }
-
-    return `${valor.toFixed(2)}°${origem} equivale a ${resultado.toFixed(2)}°${destino}`;
 }
 
-module.exports = converterTemperatura;
+// Compatível com Node.js e navegador
+if (typeof module !== 'undefined') {
+    module.exports = converterTemperatura;
+} else {
+    window.converterTemperatura = converterTemperatura;
+}
