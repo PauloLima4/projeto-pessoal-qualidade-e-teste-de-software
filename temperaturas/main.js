@@ -12,8 +12,12 @@ rl.question('Digite o valor da temperatura: ', (valorInput) => {
 
     rl.question('Digite a unidade de origem (C, F ou K): ', (origem) => {
         rl.question('Digite a unidade de destino (C, F ou K): ', (destino) => {
-            const resultado = converterTemperatura(valor, origem, destino);
-            console.log("\nResultado:", resultado);
+            try {
+                const resultado = converterTemperatura(valor, origem, destino);
+                console.log("\nResultado:", resultado);
+            } catch (error) {
+                console.error("Erro:", error.message);
+            }
             rl.close();
         });
     });
