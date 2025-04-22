@@ -10,6 +10,4 @@ function converter() {
         document.getElementById('resultado').innerText = `Erro: ${err.message}`;
     }
 }
-
-// Disponibiliza para o botão onclick
 window.converter = converter;
