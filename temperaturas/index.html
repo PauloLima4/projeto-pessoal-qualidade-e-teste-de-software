@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  <title>Conversor de Temperatura</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Conversor de Temperatura</h2>
+    <input type="number" id="valor" placeholder="Digite a temperatura" />
+
+    <select id="de">
+      <option value="C">Celsius (°C)</option>
+      <option value="F">Fahrenheit (°F)</option>
+      <option value="K">Kelvin (°K)</option>
+    </select>
+
+    <select id="para">
+      <option value="C">Celsius (°C)</option>
+      <option value="F">Fahrenheit (°F)</option>
+      <option value="K">Kelvin (°K)</option>
+    </select>
+
+    <button onclick="converter()">Converter</button>
+    <div class="resultado" id="resultado"></div>
+  </div>
+</body>
+</html>
