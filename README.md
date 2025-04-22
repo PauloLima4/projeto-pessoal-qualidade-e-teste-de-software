@@ -1,82 +1,67 @@
-**Controle de Senhas - Sistema de Fila de Atendimento**
+# 🌡️ Conversor de Temperatura - HTML, CSS e JS
 
-**📋 Descrição**
-O Controle de Senhas é um sistema desenvolvido para gerenciar senhas de uma fila de atendimento, útil em diversos contextos onde há a necessidade de organizar o atendimento de pessoas em uma sequência específica. Ele gera senhas automaticamente, chama a próxima senha da fila e permite o gerenciamento de senhas pendentes e atendidas, facilitando o trabalho em ambientes como hospitais, bancos, lojas ou qualquer outro lugar que precise de um controle ordenado e eficiente para atendimento ao público.
+## 📋 Descrição
 
-**💡 Problema que Resolve**
-Este sistema resolve o problema de organizar e controlar filas de atendimento, garantindo que cada pessoa seja atendida na ordem correta. Ele:
+O **Conversor de Temperatura** é uma aplicação web simples e funcional, criada com HTML, CSS e JavaScript puro, que permite converter valores entre as três principais unidades de temperatura: **Celsius**, **Fahrenheit** e **Kelvin**. O sistema realiza as conversões com base em fórmulas científicas confiáveis e respeita os limites físicos de cada unidade de medida.
 
-Gera senhas automaticamente, evitando confusão ou perda de ordem no atendimento.
+É uma ferramenta útil para estudantes, profissionais e qualquer pessoa que precise realizar conversões de temperatura de forma rápida e prática, diretamente no navegador.
 
-Gerencia senhas pendentes e atendidas, mantendo o fluxo de atendimento controlado.
+---
 
-Exibe a senha atual sendo atendida, para que todos saibam qual é a próxima na fila.
+## 💡 Problema que Resolve
 
-Sem uma ferramenta como essa, o atendimento manual pode ser propenso a erros, como esquecer qual foi a última senha chamada, ou perder a ordem do atendimento, o que gera frustração tanto para o cliente quanto para os atendentes.
+Este sistema resolve o problema de converter valores entre diferentes escalas de temperatura sem depender de ferramentas externas ou calculadoras.
 
-**🎯 Público-Alvo**
-Este sistema pode ser utilizado por:
+Ele:
 
-Hospitais: Organizar o atendimento de pacientes nas unidades de emergência ou em consultórios.
+- Converte valores entre Celsius, Fahrenheit e Kelvin.
+- Valida entradas para evitar valores fisicamente impossíveis, como temperaturas negativas em Kelvin.
+- Informa ao usuário sobre erros de entrada de forma clara e didática.
+- Oferece uma interface simples e responsiva para facilitar o uso em qualquer dispositivo.
 
-Bancos e Instituições Financeiras: Gerenciar a fila de atendimento ao cliente, garantindo que todos sejam atendidos de forma ordenada.
+---
 
-Lojas e Comércio Varejista: Organizar o atendimento de clientes no caixa ou em balcões de atendimento, evitando sobrecarga de filas.
+## 🎯 Público-Alvo
 
-Serviços Públicos: Como órgãos municipais ou estaduais que necessitam organizar filas de atendimento ao público.
+Este conversor pode ser útil para:
 
-**⚙️ Funcionalidades**
-Gerar Senhas: O sistema gera uma nova senha automaticamente com base no contador sequencial.
+- **Estudantes e professores**: Em aulas de física, química ou ciências.
+- **Profissionais de laboratórios**: Que lidam com dados de temperatura em diferentes escalas.
+- **Curiosos e autodidatas**: Que queiram entender melhor como funciona a conversão entre diferentes unidades.
+- **Pessoas do dia a dia**: Que desejam converter uma temperatura lida em um site internacional ou no manual de um equipamento.
 
-Chamar Senha: A função de "chamar próxima senha" retira a senha da fila de pendentes e a move para atendidas.
+---
 
-Mostrar Senha Atual: Exibe qual é a senha que está sendo atendida no momento.
+## ⚙️ Funcionalidades
 
-Listar Senhas Pendentes e Atendidas: Visualização fácil das senhas pendentes e já atendidas.
+- ✅ **Conversão entre Fahrenheit, Celsius e Kelvin**
+- ✅ **Validação de entradas inválidas (strings, vazios, negativos inválidos)**
+- ✅ **Mensagens claras de erro para entradas impossíveis**
+- ✅ **Interface amigável e responsiva**
+- ✅ **Resultado formatado com duas casas decimais**
 
-Resetar Sistema: Em caso de necessidade, é possível resetar todo o sistema, reiniciando a fila.
+---
 
-**🛠️ Tecnologias Utilizadas**
-JavaScript Puro: Toda a lógica foi implementada em JavaScript, sem dependências externas.
+## 🛠️ Tecnologias Utilizadas
 
-Jest: Para garantir a qualidade e confiabilidade do sistema, utilizamos testes automatizados com Jest.
+- **HTML5**: Estrutura da página  
+- **CSS3**: Estilização moderna e responsiva  
+- **JavaScript (puro)**: Lógica de conversão e manipulação da interface  
 
-Babel: Compilação do código moderno JavaScript para garantir compatibilidade com diferentes ambientes.
+---
 
-Vite: Ferramenta de build para uma experiência rápida e eficiente de desenvolvimento.
+## 🔮 Melhorias Futuras
+- **🔄 Histórico de conversões**
 
-**🏗️ Como Rodar o Projeto**
-*Pré-requisitos*
-Antes de rodar o projeto, é necessário ter o Node.js e o npm instalados na sua máquina. Caso não tenha, baixe e instale aqui.
+- **💾 Salvar última conversão com LocalStorage**
 
-*Passos para rodar localmente*
-1. Clone o repositório para o seu computador:
+- **🌐 Versão multilíngue (PT/EN)**
 
-git clone <url-do-repositorio>
-cd controle-senhas
+- **📲 Transformar em PWA (aplicativo instalável)**
 
-2. Instale as dependências do projeto:
+- **🎨 Tema escuro e claro (modo noturno)**
 
-npm install
+---
 
-3. Para rodar o sistema em ambiente de desenvolvimento:
-
-npm run dev
-
-4. Para rodar os testes automatizados:
-
-npm test
-Isso irá rodar todos os testes do sistema usando o Jest.
-
-**🔮 Melhorias Futuras**
-*Persistência*: Adicionar armazenamento das senhas em um banco de dados ou localStorage, para garantir que as senhas não sejam perdidas quando o sistema for reiniciado.
-
-*Notificações*: Implementar um sistema de notificações para avisar os usuários quando sua senha estiver sendo atendida.
-
-*Interface de Usuário Avançada*: Melhorar a interface com recursos como a visualização em tempo real da fila de senhas, notificações automáticas, etc.
-
-**👥 Contribuições**
-Se você deseja contribuir com melhorias para esse projeto, fique à vontade para abrir issues ou enviar pull requests.
-
-**📜 Licença**
-Este projeto está licenciado sob a MIT License.
+## 👥 Contribuições
+Se você deseja contribuir com melhorias para esse projeto, fique à vontade para abrir issues ou enviar pull requests. Toda ajuda é bem-vinda!
