@@ -1,4 +1,6 @@
 function converterTemperatura(valor, origem, destino) {
+    valor = parseFloat(valor); 
+
     if (typeof valor !== 'number' || isNaN(valor)) {
         return "Entrada inválida. Por favor, informe um número";
     }
@@ -11,7 +13,6 @@ function converterTemperatura(valor, origem, destino) {
         return "Unidade inválida. Use C, F ou K";
     }
 
-    // Verificações de limite físico (zero absoluto)
     if (origem === 'K' && valor < 0) {
         return "Temperatura em Kelvin não pode ser negativa";
     }
@@ -22,7 +23,6 @@ function converterTemperatura(valor, origem, destino) {
         return "Temperatura em Fahrenheit não pode ser menor que -459.67°F";
     }
 
-    // Conversão
     let celsius;
     switch (origem) {
         case 'C': celsius = valor; break;
@@ -37,17 +37,15 @@ function converterTemperatura(valor, origem, destino) {
         case 'K': convertido = celsius + 273.15; break;
     }
 
-    // Formatar resultado
     const unidades = {
         C: "°C",
         F: "°F",
-        K: "°K"
+        K: "K"
     };
 
     return `${valor.toFixed(2)}${unidades[origem]} equivale a ${convertido.toFixed(2)}${unidades[destino]}`;
 }
 
-// Compatível com Node.js e navegador
 if (typeof module !== 'undefined') {
     module.exports = converterTemperatura;
 } else {
